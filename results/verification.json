@@ -1,0 +1,68 @@
+{
+  "candidate_districts": {
+    "강동구": 4,
+    "강북구": 1,
+    "강서구": 1,
+    "관악구": 1,
+    "구로구": 1,
+    "노원구": 3,
+    "동대문구": 2,
+    "성북구": 2
+  },
+  "contacts_per_1000_median": 16.39871382636656,
+  "core_coverage300_median": 0.9051938933542876,
+  "core_stop_ratio_median": 3.1482181085505605,
+  "core_contacts_ratio_median": 8.128759551292474,
+  "core_geometric_below90": 7,
+  "sensitivity": [
+    {
+      "scenario": "6월 기본 기준",
+      "candidate_count": 15,
+      "base_overlap": 15,
+      "jaccard": 1.0
+    },
+    {
+      "scenario": "50m 정류장 군집",
+      "candidate_count": 16,
+      "base_overlap": 12,
+      "jaccard": 0.631578947368421
+    },
+    {
+      "scenario": "동 경계 밖 50m 포함",
+      "candidate_count": 17,
+      "base_overlap": 15,
+      "jaccard": 0.8823529411764706
+    },
+    {
+      "scenario": "9월 공급 자료 대체",
+      "candidate_count": 15,
+      "base_overlap": 15,
+      "jaccard": 1.0
+    },
+    {
+      "scenario": "운행실적 있는 정류장만",
+      "candidate_count": 16,
+      "base_overlap": 15,
+      "jaccard": 0.9375
+    },
+    {
+      "scenario": "경계보정 및 중복경계 제외",
+      "candidate_count": 15,
+      "base_overlap": 15,
+      "jaccard": 1.0
+    },
+    {
+      "scenario": "상하위 20% 기준",
+      "candidate_count": 9,
+      "base_overlap": 9,
+      "jaccard": 0.6
+    },
+    {
+      "scenario": "상하위 30% 기준",
+      "candidate_count": 24,
+      "base_overlap": 15,
+      "jaccard": 0.625
+    }
+  ],
+  "checks": "PASS"
+}

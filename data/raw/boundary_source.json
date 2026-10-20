@@ -1,0 +1,9 @@
+{
+  "source": "https://github.com/vuski/admdongkor",
+  "file": "ver20260401/HangJeongDong_ver20260401.geojson",
+  "commit": "7360288277dfd12d74e54b959c59bdd66f852e3a",
+  "version": "2026-04-01",
+  "license": "CC BY 4.0; upstream SGIS KOGL Type 1",
+  "retrieved": "2026-10-20",
+  "changes": "서울 427개 행정동 추출, name·gu 속성 정리, 자치구 경계는 해당 동 경계를 통합하여 작성"
+}

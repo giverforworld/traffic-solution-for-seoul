@@ -1,0 +1,31 @@
+{
+  "retrieved_on": "2026-10-20",
+  "hospitals": {
+    "provider": "서울특별시 시민건강국 보건의료정책과",
+    "url": "https://data.seoul.go.kr/dataList/OA-16479/S/1/datasetView.do",
+    "raw_file": "hospitals_20261020.csv",
+    "rows": 930,
+    "license": "공공누리 제1유형",
+    "encoding": "cp949",
+    "crs": "EPSG:5174",
+    "use": "영업상태코드01·종합병원인 성심의료재단강동성심병원 및 강동경희대학교병원의 주소·좌표 확인"
+  },
+  "subway_master": {
+    "provider": "서울특별시",
+    "url": "https://data.seoul.go.kr/dataList/OA-21232/S/1/datasetView.do",
+    "raw_file": "subway_master_20261020.csv",
+    "rows": 784,
+    "license": "공공누리 제1유형",
+    "encoding": "cp949",
+    "crs": "EPSG:4326",
+    "use": "암사·천호5/8호선·강동의 역ID·호선 확인"
+  },
+  "sheet_download": {
+    "url": "https://datafile.seoul.go.kr/bigfile/iot/sheet/csv/download.do",
+    "method": "POST",
+    "common_form": {"srvType":"S","serviceKind":"1","ssUserId":"SAMPLE_VIEW","strWhere":"","strOrderby":"","filterCol":"필터선택","txtFilter":""},
+    "per_dataset_form": {"hospitals_20261020.csv":{"infId":"OA-16479"},"subway_master_20261020.csv":{"infId":"OA-21232"}},
+    "access": "공식 Sheet의 전체 CSV 내려받기. 인증키가 필요한 OpenAPI와 구분."
+  },
+  "additional_sources": "노선·환승·시설 안내의 출처, 다운로드 경로, 라이선스 및 범위는 case_route_sources.json 참조. 연료계수와 가정은 carbon_parameters.json 참조."
+}

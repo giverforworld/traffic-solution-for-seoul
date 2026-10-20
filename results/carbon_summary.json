@@ -1,0 +1,37 @@
+{
+  "boundary": "운행단계 연료 연소 CO2만 산정. CH4/N2O, 연료 상류, 차량 제조, 보행시설 공사 제외.",
+  "all_demand_distance_efficiency_and_days_are_assumptions": true,
+  "fuel_co2_kg_per_litre_petrol": 2.08593,
+  "fuel_co2_kg_per_nm3_cng": 2.15985,
+  "car_co2_kg_vehicle_km_assumption": 0.20859299999999997,
+  "bus_co2_kg_vehicle_km_assumption": 1.079925,
+  "break_even_avoided_car_vehicle_km_day_for_extra_bus20": 103.54374307862682,
+  "threshold_sensitivity_min_car_vehicle_km_day": 55.2233296419343,
+  "threshold_sensitivity_max_car_vehicle_km_day": 207.08748615725364,
+  "scenarios_extra_bus20": [
+    {
+      "extra_bus_vehicle_km_day_assumption": 20,
+      "avoided_car_vehicle_km_day_assumption": 80,
+      "avoided_co2_kg_day": 16.68744,
+      "extra_bus_co2_kg_day": 21.5985,
+      "net_co2_reduction_kg_day": -4.911060000000003,
+      "net_co2_reduction_t_year_assumption": -1.2277650000000007
+    },
+    {
+      "extra_bus_vehicle_km_day_assumption": 20,
+      "avoided_car_vehicle_km_day_assumption": 200,
+      "avoided_co2_kg_day": 41.718599999999995,
+      "extra_bus_co2_kg_day": 21.5985,
+      "net_co2_reduction_kg_day": 20.120099999999994,
+      "net_co2_reduction_t_year_assumption": 5.030024999999998
+    },
+    {
+      "extra_bus_vehicle_km_day_assumption": 20,
+      "avoided_car_vehicle_km_day_assumption": 400,
+      "avoided_co2_kg_day": 83.43719999999999,
+      "extra_bus_co2_kg_day": 21.5985,
+      "net_co2_reduction_kg_day": 61.83869999999999,
+      "net_co2_reduction_t_year_assumption": 15.459674999999997
+    }
+  ]
+}

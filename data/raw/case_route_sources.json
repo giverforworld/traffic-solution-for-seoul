@@ -1,0 +1,378 @@
+{
+  "retrieved_on": "2026-10-20",
+  "timezone": "Asia/Seoul",
+  "purpose": "암사1동 공개거점에서 실제 의료기관으로의 대중교통 경로 구성요소를 확인한다. 실측 통행시간이나 고령자 개인의 실제 이용경로를 추정한 자료가 아니다.",
+  "sources": [
+    {
+      "id": "origin_center",
+      "title": "암사1동 소개 및 찾아오시는길",
+      "provider": "서울특별시 강동구 암사1동",
+      "url": "https://www.gangdong.go.kr/web/dongrenew/contents/amsa1_010_010",
+      "source_type": "지자체 공식 시설 안내",
+      "facts": {
+        "place": "암사1동주민센터",
+        "address": "서울특별시 강동구 올림픽로98가길 57",
+        "subway_access": {
+          "line": "8호선",
+          "station": "암사역",
+          "exit": "1번출구",
+          "published_walk_minutes": 10
+        },
+        "bus_access": [
+          {
+            "route": "3411",
+            "stop_hint": "암사역",
+            "published_walk_minutes": 10
+          },
+          {
+            "route": "340",
+            "stop_hint": "신암중학교",
+            "published_walk_minutes": 10
+          }
+        ]
+      },
+      "interpretation": "사이트의 일반 안내시간이다. 고령자 보행속도, 경사, 신호대기, 역사 내부 이동을 측정한 시간이 아니다."
+    },
+    {
+      "id": "hospital_kdh",
+      "title": "강동성심병원 찾아오시는 길",
+      "provider": "강동성심병원",
+      "url": "https://www.kdh.or.kr/sub314.php",
+      "source_type": "의료기관 공식 시설 안내",
+      "facts": {
+        "place": "강동성심병원",
+        "address": "서울특별시 강동구 성안로 150",
+        "subway_access": {
+          "line": "5호선",
+          "station": "강동역",
+          "exits": [
+            "2번출구",
+            "2-1번출구"
+          ],
+          "published_walk_minutes": 5
+        },
+        "nearby_bus_stop": "강동성심병원(동신중학교)",
+        "nearby_stop_routes": [
+          "130",
+          "3212"
+        ]
+      },
+      "interpretation": "일반 안내 도보시간을 분석용 구성요소로 사용한다. 해당 병원 이용 수요 및 이동 불편을 입증하지 않는다."
+    },
+    {
+      "id": "hospital_khnmc",
+      "title": "강동경희대학교병원 의대병원 오시는 길",
+      "provider": "강동경희대학교병원",
+      "url": "https://med.khnmc.or.kr/kr/patient-parent/location/directions.do",
+      "source_type": "의료기관 공식 시설 안내",
+      "facts": {
+        "place": "강동경희대학교병원",
+        "address": "서울특별시 강동구 동남로 892",
+        "subway_access": {
+          "line": "5호선",
+          "station": "고덕역",
+          "exit": "4번출구",
+          "transfer_from_line8_at": "천호역",
+          "line5_direction": "하남검단산행"
+        },
+        "hospital_bus_routes": [
+          "3318",
+          "3321",
+          "3411",
+          "3412",
+          "3413",
+          "342",
+          "81(하남)"
+        ],
+        "godeok_stop_bus_routes": [
+          "340",
+          "강동01"
+        ],
+        "published_walk_from_godeok_bus_stop_minutes": 6
+      },
+      "interpretation": "고덕역 버스 정류소부터의 도보 6분을 지하철 승강장부터의 시간으로 대체하지 않는다."
+    },
+    {
+      "id": "route_info",
+      "title": "T-DATA 노선 정보",
+      "provider": "서울특별시 버스정보시스템(BIS), 미래첨단교통과",
+      "url": "https://t-data.seoul.go.kr/dataprovide/trafficdataviewfile.do?data_id=53",
+      "download_url": "https://t-data.seoul.go.kr/dataprovide/download.do?id=10246",
+      "metadata_modified_on": "2026-10-19",
+      "update_cycle": "분기별 1회",
+      "license": "저작권자표시(BY): 이용·변경·2차적 저작물 작성을 포함한 자유이용 허락",
+      "raw_file": "route_info_20261020.csv",
+      "sha256": "ff616957cb3e16443bad2b84f5be4980cfa615a5323eb4649c26f3c30e2f9074",
+      "rows": 1751,
+      "columns": 46,
+      "normalization": "UTF-8-SIG로 읽은 뒤 모든 셀에서 U+FEFF를 제거한다. 원본은 변경하지 않는다.",
+      "selected_rows": [
+        {
+          "노선ID": "100100212",
+          "노선명": "3212",
+          "운행여부": "1",
+          "사용여부": "1",
+          "배차": "14",
+          "최소배차": "12",
+          "최대배차": "19",
+          "배차(토요일)": "16",
+          "배차(공휴일)": "18",
+          "기점명(인가정보)": "강동차고지",
+          "종점명(인가정보)": "강변역"
+        },
+        {
+          "노선ID": "100100018",
+          "노선명": "130",
+          "운행여부": "1",
+          "사용여부": "1",
+          "배차": "8",
+          "최소배차": "3",
+          "최대배차": "14",
+          "배차(토요일)": "11",
+          "배차(공휴일)": "11",
+          "기점명(인가정보)": "우이동",
+          "종점명(인가정보)": "길동"
+        },
+        {
+          "노선ID": "100100223",
+          "노선명": "3411",
+          "운행여부": "1",
+          "사용여부": "1",
+          "배차": "11",
+          "최소배차": "9",
+          "최대배차": "15",
+          "배차(토요일)": "12",
+          "배차(공휴일)": "14",
+          "기점명(인가정보)": "강동차고지",
+          "종점명(인가정보)": "한티역"
+        },
+        {
+          "노선ID": "124900003",
+          "노선명": "강동02",
+          "운행여부": "1",
+          "사용여부": "1",
+          "배차": "17",
+          "최소배차": "14",
+          "최대배차": "29",
+          "배차(토요일)": "26",
+          "배차(공휴일)": "26",
+          "기점명(인가정보)": "가래여울",
+          "종점명(인가정보)": "암사동서원마을"
+        },
+        {
+          "노선ID": "100100498",
+          "노선명": "3318",
+          "운행여부": "1",
+          "사용여부": "1",
+          "배차": "12",
+          "최소배차": "10",
+          "최대배차": "17",
+          "배차(토요일)": "15",
+          "배차(공휴일)": "16",
+          "기점명(인가정보)": "강동차고지",
+          "종점명(인가정보)": "마천동"
+        },
+        {
+          "노선ID": "100100055",
+          "노선명": "340",
+          "운행여부": "1",
+          "사용여부": "1",
+          "배차": "7",
+          "최소배차": "5",
+          "최대배차": "10",
+          "배차(토요일)": "10",
+          "배차(공휴일)": "10",
+          "기점명(인가정보)": "강동공영차고지",
+          "종점명(인가정보)": "강남역"
+        }
+      ],
+      "interpretation": "배차·최소배차·최대배차는 정적 노선운행정보 필드의 원자료 값이다. 실측 정류소 대기시간이나 특정시간대의 정확한 시간표가 아니다."
+    },
+    {
+      "id": "ridership_september",
+      "title": "서울시 버스노선별 정류장별 시간대별 승하차 인원 정보, 2026년 9월",
+      "provider": "서울특별시",
+      "url": "https://data.seoul.go.kr/dataList/OA-12913/F/1/datasetView.do",
+      "source_type": "공공데이터 월간 파일",
+      "raw_file": "ridership_202609.csv",
+      "license": "공공누리 제1유형",
+      "interpretation": "역명 끝 괄호 안 5자리 순번을 노선 내 순서로 읽어 같은 방향 경유를 검증한다. 노선별 정류소 구간 운행시간은 제공하지 않으므로 순번을 분 단위 시간으로 변환하지 않는다."
+    },
+    {
+      "id": "subway_transfer",
+      "title": "서울교통공사_서울 도시철도 환승정보",
+      "provider": "서울교통공사 정보운영센터",
+      "url": "https://data.seoul.go.kr/dataList/OA-22521/F/1/datasetView.do",
+      "download_url": "https://datafile.seoul.go.kr/bigfile/iot/inf/nio_download.do?&useCache=false",
+      "download_method": "POST",
+      "download_form": {
+        "infId": "OA-22521",
+        "seq": "1",
+        "seqNo": "",
+        "infSeq": "2"
+      },
+      "source_file_title": "서울교통공사_수도권 도시철도 환승 데이터_20250317.csv",
+      "file_list_modified_on": "2025-09-29",
+      "metadata_modified_on": "2026-04-22",
+      "license": "공공누리 제1유형",
+      "raw_file": "subway_transfer_20250317.csv",
+      "encoding": "cp949",
+      "rows": 892,
+      "columns": 14,
+      "sha256": "1049da33f549e24e3c20b57c6aa594e0fd558df6a1adcb158117e28d97ef9228",
+      "selected_transfer_row": {
+        "고유번호": "721",
+        "환승시작역": "천호",
+        "환승시작 코드": "2812",
+        "환승시작 호선": "8",
+        "하차 열차 방면": "강동구청 방면",
+        "하차위치(호차)": "5",
+        "하차위치(문)": "4",
+        "환승종료역": "천호",
+        "환승종료역 코드": "2548",
+        "환승종료 호선": "5",
+        "환승 열차 방면": "강동 방면",
+        "환승 승차위치(호차)": "8",
+        "환승 승차위치(문)": "2",
+        "소요시간": "01:59"
+      },
+      "verified_fact": "천호에서 8호선 강동구청방면 하차 후 5호선 강동방면으로 환승하는 연결이 존재한다.",
+      "interpretation": "소요시간 01:59는 제공기관의 참고 환승정보이며 개인 걸음걸이와 속도에 따라 달라진다. 고령자 실측 시간·엘리베이터 경로 소요시간으로 해석하지 않는다. 해당 파일의 명목 기준은 2025-03-17이며 조회일과 구분한다."
+    }
+  ],
+  "verified_route_components": [
+    {
+      "id": "kdh_rail",
+      "origin": "암사1동주민센터",
+      "destination": "강동성심병원",
+      "path": [
+        "주민센터",
+        "도보",
+        "8호선 암사역 1번출구",
+        "8호선 천호역",
+        "5호선으로 환승",
+        "강동역 2번/2-1번출구",
+        "도보",
+        "강동성심병원"
+      ],
+      "transfers": 1,
+      "published_endpoint_walk_minutes": {
+        "origin": 10,
+        "destination": 5,
+        "sum": 15
+      },
+      "evidence": [
+        "origin_center",
+        "hospital_kdh",
+        "subway_transfer"
+      ],
+      "claim_level": "공식 안내와 노선 연결을 조합한 경로, 실제 총통행시간은 미측정",
+      "not_included": [
+        "지하철 대기시간",
+        "열차 운행시간",
+        "역사 내부 접근·환승시간",
+        "신호대기",
+        "고령자 개인별 보행시간"
+      ],
+      "warning": "양단 도보 합계 15분은 전체 통행시간이 아니다. 주소 또는 역까지 15분 이내 접근 가능 인구를 산정한 자료도 아니다.",
+      "published_transfer_reference_time": "01:59",
+      "published_transfer_reference_time_used_in_total": false
+    },
+    {
+      "id": "kdh_bus_transfer",
+      "origin": "암사역선사현대아파트 정류소",
+      "destination": "강동성심병원(동신중학교) 정류소",
+      "legs": [
+        {
+          "route": "3411",
+          "board_stop": "암사역선사현대아파트",
+          "board_ars": "25155",
+          "board_sequence": 23,
+          "alight_stop": "천호역2번출구.현대백화점",
+          "alight_ars": "25161",
+          "alight_sequence": 26
+        },
+        {
+          "mode": "walk_transfer",
+          "from_ars": "25161",
+          "to_ars": "25014",
+          "minutes": null
+        },
+        {
+          "route": "130",
+          "board_stop": "천호역",
+          "board_ars": "25014",
+          "board_sequence": 40,
+          "alight_stop": "강동성심병원(동신중학교)",
+          "alight_ars": "25224",
+          "alight_sequence": 42
+        }
+      ],
+      "transfers": 1,
+      "evidence": [
+        "origin_center",
+        "hospital_kdh",
+        "ridership_september"
+      ],
+      "claim_level": "9월 승하차 파일의 동일방향 경유 순번을 조합한 연결 후보",
+      "not_confirmed": [
+        "환승 정류소 사이 실제 보행경로 및 시간",
+        "주민센터에서 선택한 버스정류소까지 정확한 경로",
+        "구간 차내시간",
+        "통합 환승 소요시간",
+        "10월20일 임시우회 여부"
+      ],
+      "included_in_main_report": false,
+      "reason_not_in_main_report": "환승 정류소 사이 보행연결을 확인하지 않았으므로 보고서 주사례에서 제외한다."
+    },
+    {
+      "id": "khnmc_direct_bus",
+      "origin": "암사역2번출구.암사종합시장 정류소",
+      "destination": "강동경희대병원.명일동이마트 정류소",
+      "legs": [
+        {
+          "route": "3411",
+          "board_ars": "25156",
+          "board_sequence": 70,
+          "alight_ars": "25177",
+          "alight_sequence": 82
+        },
+        {
+          "route": "3318",
+          "board_ars": "25156",
+          "board_sequence": 89,
+          "alight_ars": "25177",
+          "alight_sequence": 101
+        }
+      ],
+      "transfers": 0,
+      "stop_sequence_difference": 12,
+      "evidence": [
+        "hospital_khnmc",
+        "ridership_september",
+        "route_info"
+      ],
+      "claim_level": "9월 노선별 승하차 정류소 순서와 병원 안내로 환승 없는 연결 확인",
+      "not_confirmed": [
+        "주민센터부터 승차정류소까지 실제 보행시간",
+        "정류소부터 병원 출입구까지 보행시간",
+        "구간 차내시간",
+        "두 노선의 공통 구간 실제 합산배차"
+      ],
+      "warning": "순번차 12는 차내시간 12분이라는 뜻이 아니다. 배차 11분과 12분을 단순 합산·역수합산하여 통합 대기시간을 확정하지 않는다."
+    }
+  ],
+  "analysis_implications": [
+    "암사1동 버스 공급 지표가 낮다는 결과만으로 의료시설 접근이 불가능하다고 결론 내릴 수 없다. 강동성심병원은 지하철 환승 경로, 강동경희대병원은 3411·3318번 환승 없는 버스 연결이 확인된다.",
+    "대표거점의 양단 보행과 환승이 확인되므로 보행·대기·환승을 나누어 현장 점검하는 정책을 제안할 근거가 된다. 실제 불편이나 보행단절 발생의 확인으로 표현해서는 안 된다.",
+    "시민과학 데이터는 아직 수집하지 않았다. 향후 고령 참여자 동행조사에서 보행시간·횡단대기·휴식·환승을 기록해 행정동 선별지표를 보정하는 단계로 설계한다."
+  ],
+  "unmeasured": [
+    "고령자 실제 OD 및 병원 선택",
+    "주민별 보행속도·경사·장애물",
+    "시간대별 실측대기·차내·환승시간",
+    "정류장 별 저상버스 운행확률",
+    "승용차에서 대중교통으로 전환될 비율",
+    "정책 시행 전후 실제 접근시간 및 탄소감축량"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "hospital_status_and_type": true,
+  "rail_station_ids_and_transfer_lines": true,
+  "official_transfer_direction_record": true,
+  "bus_direction_sequence_complete": true,
+  "headway_bounds": true,
+  "carbon_unit_conversion": true,
+  "carbon_break_even_zero": true,
+  "carbon_positive_and_negative_scenarios": true,
+  "no_measured_total_travel_time_or_mode_shift_claimed": true
+}
