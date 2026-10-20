@@ -1,0 +1,21 @@
+{
+  "outside_general_hospitals": 94,
+  "outside_by_sido": {
+    "경기": 73,
+    "인천": 21
+  },
+  "served_gap_share_seoul_only": 0.1946945117214276,
+  "served_gap_share_with_outside": 0.1914728327925787,
+  "core_seoul_only": 20,
+  "core_kept_with_outside": 18,
+  "core_kept_elderly": 70116,
+  "core_dropped": [
+    "송파구 문정2동",
+    "송파구 위례동"
+  ],
+  "core_dropped_gap_share_with_outside": {
+    "송파구 문정2동": 0.42,
+    "송파구 위례동": 0.508
+  },
+  "new_core_with_outside_not_in_seoul_only": []
+}

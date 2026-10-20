@@ -33,6 +33,7 @@ python hospital_access.py   # 100m 격자 환승 없는 종합병원 접근, 16�
 python figures.py           # 그림 01~04
 python policy_figures.py    # 그림 05~06
 python access_figures.py    # 보고서 그림 07~10
+python hospital_access_boundary.py  # 경계 민감도(경기·인천 종합병원 추가)
 ```
 
 한글 그래프 폰트는 Windows 맑은 고딕, Linux 나눔고딕, macOS Apple SD Gothic Neo를 탐색한다. 다른 환경에서는 한글 TTF 파일 경로를 `KOREAN_FONT` 환경변수로 지정한다.
@@ -46,7 +47,21 @@ python access_figures.py    # 보고서 그림 07~10
 - 도보: 격자에서 500m 이내 종합병원
 - 행정동별 직행 공백 비율 = 판정 대상 격자 중 위 세 경로가 모두 없는 격자의 비율
 - N ∈ {8, 10, 12, 15}, K ∈ {4, 5, 6, 8} 16개 조합과 9월 자료로 반복 계산(`hospital_access_grid.csv`)
-- 한계: 실제 배차·차내시간·보행 경사·저상버스, 서울 밖 병원, 의원·약국, 격자별 실거주 인구는 반영하지 않음
+- 한계: 실제 배차·차내시간·보행 경사·저상버스, 의원·약국, 격자별 실거주 인구는 반영하지 않음
+
+## 경계 민감도: 서울 밖 종합병원 추가(`hospital_access_boundary.py`)
+
+서울 경계 동이 경기도 병원을 이용할 수 있어 사각지대로 잘못 분류될 가능성을 점검한다. 건강보험심사평가원 '전국 병의원 및 약국 현황'(2026년 9월판, 공공누리 제1유형)에서 경기·인천의 상급종합·종합병원 94곳(경기 73, 인천 21)을 도착지에 추가하고 같은 16개 기준과 9월 자료로 다시 판정한다. 같은 자료의 서울 상급종합·종합병원 수는 59곳으로 서울시 병원 인허가 기준과 일치한다.
+
+| 항목 | 서울 병원만 | 경기·인천 병원 추가 |
+|---|---|---|
+| 정류장 권역 직행 공백 비율(기본 기준) | 19.5% | 19.1% |
+| 핵심 지역(16개 기준·9월 자료 모두 50% 이상) | 20개 동 | 18개 동 유지 |
+
+- 제외된 동: 송파구 문정2동·위례동(8호선으로 성남 방면 종합병원과 연결). 새로 추가된 핵심 동은 없다.
+- 서울 병원만 넣으면 기존 `hospital_access.py` 결과와 동일하게 재현된다.
+- 한계: 버스 정류장 좌표는 서울시 정류소 자료만 있어 경기 구간 정류장에서 내리는 버스 직행은 일부만 반영된다. 철도는 수도권 전체 역을 사용한다.
+- 자료: `data/raw/hira_general_hospitals_gyeonggi_incheon_202609.csv`(원 파일에서 경기·인천 상급종합·종합병원 행과 이름·종별·주소·좌표 열만 추출), 결과: `results/hospital_access_boundary_dong.csv`, `results/hospital_access_boundary_summary.json`
 
 결과 파일: `hospital_access_dong.csv`(동별), `hospital_access_grid.csv`(16개 기준), `hospital_access_summary.json`(요약·핵심 지역 목록·암사 사례), `hospital_access_cells.csv.gz`(격자별 판정).
 
