@@ -118,9 +118,36 @@ def evaluate_carbon():
     return result
 
 
+def evaluate_carbon_ev():
+    """노선 조정(추가 운행 0km)·전기 마을버스·CNG 버스의 순감축 손익분기 비교."""
+    p = json.loads((RAW / 'carbon_parameters.json').read_text(encoding='utf8'))
+    a = p['analyst_assumptions_not_observations']
+    fuel = {k: v['kg_co2_per_tj'] * v['ncv_mj_per_unit'] * 1e-6 for k, v in p['fuel_factors'].items()}
+    grid_kg = p['electricity_factor']['kg_co2_per_kwh']
+    e_car = fuel['petrol'] / a['car_km_per_litre']
+    e_cng = fuel['cng'] / a['bus_km_per_nm3']
+    e_ev = a['ev_bus_kwh_per_km'] * grid_kg
+    extra = 20
+    res = {
+        'grid_kg_co2_per_kwh': grid_kg,
+        'car_kg_per_km': e_car, 'cng_bus_kg_per_km': e_cng, 'ev_bus_kg_per_km': e_ev,
+        'break_even_route_adjustment_km_day': 0.0,
+        'break_even_ev20_km_day': extra * e_ev / e_car,
+        'break_even_cng20_km_day': extra * e_cng / e_car,
+        'ev_threshold_range_km_day': [min(extra * k * grid_kg / (fuel['petrol'] / c) for k in a['ev_bus_kwh_per_km_sensitivity'] for c in a['car_efficiency_sensitivity_km_per_litre']),
+                                      max(extra * k * grid_kg / (fuel['petrol'] / c) for k in a['ev_bus_kwh_per_km_sensitivity'] for c in a['car_efficiency_sensitivity_km_per_litre'])],
+        'annual_t_at_100km_day': {name: (100 * e_car - extra * e) * a['operating_days_per_year'] / 1000 for name, e in [('route_adjustment', 0.0), ('ev20', e_ev), ('cng20', e_cng)]},
+        'scope': '운행단계 연료 연소·전력 사용 CO2만 산정. 수단전환량·운행거리·전비는 가정값.',
+    }
+    assert 0 < res['break_even_ev20_km_day'] < res['break_even_cng20_km_day']
+    save_json('carbon_ev_summary.json', res)
+    return res
+
+
 def main():
     RES.mkdir(exist_ok=True)
     case, carbon = evaluate_routes(), evaluate_carbon()
+    evaluate_carbon_ev()
     files = ['hospitals_20261020.csv', 'subway_master_20261020.csv', 'subway_transfer_20250317.csv', 'route_info_20261020.csv', 'ridership_202609.csv', 'case_route_sources.json', 'carbon_parameters.json']
     save_json('policy_source_sha256.json', {name: hashlib.sha256((RAW / name).read_bytes()).hexdigest() for name in files})
     save_json('policy_verification.json', {'hospital_status_and_type': True, 'rail_station_ids_and_transfer_lines': True, 'official_transfer_direction_record': True, 'bus_direction_sequence_complete': True, 'headway_bounds': True, 'carbon_unit_conversion': True, 'carbon_break_even_zero': True, 'carbon_positive_and_negative_scenarios': True, 'no_measured_total_travel_time_or_mode_shift_claimed': True})

@@ -1,0 +1,19 @@
+{
+  "grid_kg_co2_per_kwh": 0.4567,
+  "car_kg_per_km": 0.20859299999999997,
+  "cng_bus_kg_per_km": 1.079925,
+  "ev_bus_kg_per_km": 0.4567,
+  "break_even_route_adjustment_km_day": 0.0,
+  "break_even_ev20_km_day": 43.78862186171157,
+  "break_even_cng20_km_day": 103.54374307862682,
+  "ev_threshold_range_km_day": [
+    24.521628242558474,
+    98.52439918885102
+  ],
+  "annual_t_at_100km_day": {
+    "route_adjustment": 5.214824999999999,
+    "ev20": 2.9313249999999993,
+    "cng20": -0.184800000000001
+  },
+  "scope": "운행단계 연료 연소·전력 사용 CO2만 산정. 수단전환량·운행거리·전비는 가정값."
+}
