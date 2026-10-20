@@ -20,6 +20,11 @@ def setup():
  found=next((p for p in candidates if p.exists()),None)
  if found:
   font_manager.fontManager.addfont(str(found));plt.rcParams['font.family']=font_manager.FontProperties(fname=found).get_name()
+ else:  # 설치된 한글 글꼴을 이름으로 탐색(맑은 고딕·나눔고딕·애플고딕·Noto CJK KR)
+  names={f.name for f in font_manager.fontManager.ttflist}
+  fam=next((n for n in ['Malgun Gothic','NanumGothic','AppleGothic','Apple SD Gothic Neo','Noto Sans CJK KR','Noto Sans KR'] if n in names),None)
+  if fam:plt.rcParams['font.family']=fam
+  else:print('경고: 한글 글꼴을 찾지 못했습니다. KOREAN_FONT 환경변수에 한글 TTF 경로를 지정하세요.')
  plt.rcParams.update({'axes.unicode_minus':False,'font.size':9,'axes.spines.top':False,'axes.spines.right':False,'axes.titleweight':'bold','savefig.facecolor':'white'})
 def save(fig,name):
  fig.savefig(FIG/name,dpi=240,bbox_inches='tight',pad_inches=.16);plt.close(fig)

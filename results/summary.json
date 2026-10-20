@@ -54,7 +54,7 @@
       "analysis_stops": 11219
     }
   },
-  "correlation_stop_contact": 0.8967059798474486,
+  "correlation_stop_contact": 0.8967059798474487,
   "stops_total": 11236,
   "route_contacts_total": 35646,
   "core": [
@@ -66,7 +66,7 @@
       "route_contacts": 69.0,
       "stops_per_1000": 3.1663252002235054,
       "contacts_per_1000": 6.42577761221829,
-      "coverage300": 0.9051938933542877,
+      "coverage300": 0.9051938933543107,
       "coverage500": 0.9999999999999997,
       "robustness_count": 4,
       "review_type": "운행 여건 현장점검"
@@ -79,8 +79,8 @@
       "route_contacts": 81.0,
       "stops_per_1000": 3.122980831359035,
       "contacts_per_1000": 8.72280852896834,
-      "coverage300": 0.3177759470640673,
-      "coverage500": 0.40819679374924156,
+      "coverage300": 0.317775947064082,
+      "coverage500": 0.4081967937492655,
       "robustness_count": 4,
       "review_type": "보행 접근 현장점검"
     },
@@ -92,8 +92,8 @@
       "route_contacts": 91.0,
       "stops_per_1000": 3.1490552834149756,
       "contacts_per_1000": 10.613482621880102,
-      "coverage300": 0.8259183647656566,
-      "coverage500": 0.9850178832322711,
+      "coverage300": 0.8259183647656471,
+      "coverage500": 0.9850178832322699,
       "robustness_count": 4,
       "review_type": "보행 접근 현장점검"
     },
@@ -105,8 +105,8 @@
       "route_contacts": 55.0,
       "stops_per_1000": 3.1482181085505605,
       "contacts_per_1000": 6.926079838811233,
-      "coverage300": 0.8859053789122757,
-      "coverage500": 0.9884411213284708,
+      "coverage300": 0.8859053789122181,
+      "coverage500": 0.9884411213284648,
       "robustness_count": 4,
       "review_type": "보행 접근 현장점검"
     },
@@ -118,8 +118,8 @@
       "route_contacts": 59.0,
       "stops_per_1000": 3.342331919269829,
       "contacts_per_1000": 7.584522432189227,
-      "coverage300": 0.5620805889001806,
-      "coverage500": 0.7948914472690147,
+      "coverage300": 0.5620805889001207,
+      "coverage500": 0.7948914472689589,
       "robustness_count": 4,
       "review_type": "보행 접근 현장점검"
     },
@@ -131,7 +131,7 @@
       "route_contacts": 26.0,
       "stops_per_1000": 1.6759056336212452,
       "contacts_per_1000": 3.3518112672424905,
-      "coverage300": 0.9369737827924568,
+      "coverage300": 0.9369737827923563,
       "coverage500": 0.9999999999999999,
       "robustness_count": 4,
       "review_type": "운행 여건 현장점검"
@@ -144,7 +144,7 @@
       "route_contacts": 59.0,
       "stops_per_1000": 2.239474469991042,
       "contacts_per_1000": 8.808599581964765,
-      "coverage300": 0.9913674782944674,
+      "coverage300": 0.9913674782944644,
       "coverage500": 1.0,
       "robustness_count": 4,
       "review_type": "운행 여건 현장점검"
@@ -157,8 +157,8 @@
       "route_contacts": 62.0,
       "stops_per_1000": 3.539006000923219,
       "contacts_per_1000": 9.539929219879982,
-      "coverage300": 0.7517031335209123,
-      "coverage500": 0.9957222998616392,
+      "coverage300": 0.7517031335209825,
+      "coverage500": 0.9957222998616362,
       "robustness_count": 4,
       "review_type": "보행 접근 현장점검"
     },
@@ -170,8 +170,8 @@
       "route_contacts": 44.0,
       "stops_per_1000": 2.648800249298847,
       "contacts_per_1000": 6.855718292302898,
-      "coverage300": 0.45989137496970867,
-      "coverage500": 0.688419890793375,
+      "coverage300": 0.4598913749696545,
+      "coverage500": 0.6884198907932908,
       "robustness_count": 4,
       "review_type": "보행 접근 현장점검"
     },
@@ -196,8 +196,8 @@
       "route_contacts": 61.0,
       "stops_per_1000": 2.5146689019279127,
       "contacts_per_1000": 10.226320201173513,
-      "coverage300": 0.9999999999999998,
-      "coverage500": 0.9999999999999998,
+      "coverage300": 0.9999999999999997,
+      "coverage500": 0.9999999999999997,
       "robustness_count": 4,
       "review_type": "운행 여건 현장점검"
     },
@@ -209,7 +209,7 @@
       "route_contacts": 17.0,
       "stops_per_1000": 1.853099730458221,
       "contacts_per_1000": 2.8638814016172507,
-      "coverage300": 0.9830502867440105,
+      "coverage300": 0.9830502867439491,
       "coverage500": 1.0,
       "robustness_count": 4,
       "review_type": "운행 여건 현장점검"
@@ -235,8 +235,8 @@
       "route_contacts": 42.0,
       "stops_per_1000": 3.418102269619907,
       "contacts_per_1000": 5.742411812961444,
-      "coverage300": 0.24474903169511925,
-      "coverage500": 0.41021662070324794,
+      "coverage300": 0.24474903169511794,
+      "coverage500": 0.4102166207032474,
       "robustness_count": 3,
       "review_type": "보행 접근 현장점검"
     },
