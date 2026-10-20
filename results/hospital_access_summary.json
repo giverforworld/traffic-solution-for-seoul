@@ -1,4 +1,14 @@
 {
+  "stop_spacing_median_m": 322.7040632760079,
+  "base_n_km_equivalent": 3.227040632760079,
+  "core_dongs": 20,
+  "core_elderly": 79595,
+  "core_est_elderly_in_gap": 51990.90357918389,
+  "core_top10_est_elderly_in_gap": 33068.14573399104,
+  "core_in_supply_S_q25_only": [
+    "강동구 암사2동"
+  ],
+  "core_with_elderly_q75": 2,
   "definition": {
     "cell_m": 100,
     "walk_stop_m": 300,

@@ -76,6 +76,19 @@ def stop_matrix(month, stops, hosp):
     return M
 
 
+def stop_spacing(month, stops):
+    """노선 내 연속 정류장 간 직선거리(m) 분포."""
+    r = pd.read_csv(RAW / f'ridership_{month}.csv', encoding='cp949', dtype=str)
+    r = r[~r['노선번호'].str.startswith('N')]
+    r['seq'] = pd.to_numeric(r['역명'].str.extract(r'\((\d+)\)$')[0], errors='coerce')
+    r = r.dropna(subset=['seq']).merge(stops[['NODE_ID', 'x_m', 'y_m']], left_on='표준버스정류장ID', right_on='NODE_ID')
+    out = []
+    for _, g in r.groupby('노선명'):
+        g = g.sort_values('seq'); ok = np.diff(g.seq.to_numpy()) == 1
+        out.extend(np.hypot(np.diff(g.x_m.to_numpy()), np.diff(g.y_m.to_numpy()))[ok])
+    return np.array(out)
+
+
 def station_matrix(rail, hosp):
     """[역, 병원] 같은 호선 역 간 최소 직선거리(km). 불가는 inf."""
     rk = cKDTree(rail[['x_m', 'y_m']].to_numpy())
@@ -199,7 +212,18 @@ def main():
         case[dong] = {k: (None if pd.isna(r[k]) else float(r[k])) for k in
                       ['elderly', 'gap_share', 'near_hosp_median', 'nearest_bus_stops_median', 'stops_per_1000', 'coverage300']}
         case[dong]['supply_candidate'] = bool(r.core_candidate)
+    stops6 = pd.read_csv(RES / 'stops_audit_202606.csv', encoding='utf-8-sig', dtype={'NODE_ID': str})
+    spacing = stop_spacing('202606', stops6[stops6.poly_id >= 0])
+    core = d[d.gap_robust == 1]
+    s_only = core[core.stops_per_1000 <= d.stops_per_1000.quantile(.25)]
     summary = {
+        'stop_spacing_median_m': float(np.median(spacing)),
+        'base_n_km_equivalent': float(np.median(spacing) * BASE_N / 1000),
+        'core_dongs': int(len(core)), 'core_elderly': int(core.elderly.sum()),
+        'core_est_elderly_in_gap': float(core.est_elderly_in_gap.sum()),
+        'core_top10_est_elderly_in_gap': float(core.sort_values('est_elderly_in_gap', ascending=False).head(10).est_elderly_in_gap.sum()),
+        'core_in_supply_S_q25_only': [f'{a} {b}' for a, b in zip(s_only.gu, s_only.dong)],
+        'core_with_elderly_q75': int((core.elderly >= d.elderly.quantile(.75)).sum()),
         'definition': {'cell_m': CELL, 'walk_stop_m': WALK_STOP, 'walk_rail_m': WALK_RAIL, 'walk_hosp_m': WALK_HOSP,
                        'hosp_stop_m': HOSP_STOP, 'hosp_rail_m': HOSP_RAIL, 'base_n': BASE_N, 'base_k': BASE_K,
                        'grid_n': N_GRID, 'grid_k': K_GRID, 'gap_share_threshold': GAP_SHARE, 'night_routes_excluded': True},
